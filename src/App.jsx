@@ -7,8 +7,10 @@ import SignIn from "./components/SignIn";
 import Layout2 from "./components/Layout2";
 import LeftSideUser from "./components/LeftSideUser";
 import Donut from "./components/Donut";
-import ExpenseForm from "./components/ExpenseForm";
 import ExpenseList from "./components/ExpenseList";
+import IncomeList from "./components/IncomeList";
+import AddTransaction from "./components/AddTransaction";
+import TransPage from "./components/TransPage";
 
 function App() {
   return (
@@ -21,8 +23,10 @@ function App() {
           <Route path="dashboard" element={<Layout2 />} />
           <Route path="user" element={<LeftSideUser />} />
           <Route path="donut" element={<Donut />} />
-          <Route path="expense" element={<ExpenseForm />} />
           <Route path="expenselist" element={<ExpenseList />} />
+          <Route path="incomelist" element={<IncomeList />} />
+          <Route path="addtran" element={<AddTransaction />} />
+          <Route path="trans" element={<TransPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
