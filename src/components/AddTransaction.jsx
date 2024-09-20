@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addIncome, deleteIncome } from "../redux/incomeSlice";
-import { addExpense, deleteExpense } from "../redux/expensesSlice";
+import { useDispatch } from "react-redux";
+import { addIncome } from "../redux/incomeSlice";
+import { addExpense } from "../redux/expensesSlice";
 import ExpenseList from "./ExpenseList";
 import IncomeList from "./IncomeList";
 

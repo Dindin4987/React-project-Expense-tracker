@@ -1,7 +1,6 @@
-
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteIncome } from "../redux/incomeSlice";
+import { deleteIncome, editIncome } from "../redux/incomeSlice";
 
 function IncomeList() {
   const income = useSelector((state) => state.income);
@@ -13,8 +12,17 @@ function IncomeList() {
       <ul>
         {income.map((inc) => (
           <li key={inc.id}>
-            {inc.category} - ${inc.amount} ({inc.comment})
-            <button onClick={() => dispatch(deleteIncome(inc.id))}>
+            {inc.category} {inc.comment} {inc.date} {inc.time} ${inc.amount}{" "}
+            <button
+              onClick={() => dispatch(editIncome(inc.id))}
+              className="border bg-primary rounded-lg px-5 py-1"
+            >
+              Edit
+            </button>
+            <button
+              onClick={() => dispatch(deleteIncome(inc.id))}
+              className="border bg-gray-700 rounded-lg px-5 py-1"
+            >
               Delete
             </button>
           </li>
