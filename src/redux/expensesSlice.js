@@ -1,9 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [
-  { id: 1, category: 'Cinema', amount: 150, date: '2023-09-01', time: '09:10:00', comment: 'Movie' },
-  { id: 2, category: 'Clothes', amount: 500, date: '2023-09-03', time: '09:10:00', comment: 'Shirt' },
-];
+const initialState = [];
 
 const expensesSlice = createSlice({
     name: 'expenses',

@@ -1,9 +1,7 @@
 // src/features/incomeSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = [
-  { id: 1, category: 'Salary', amount: 3500, date: '2023-09-01', comment: 'IT Company' },
-];
+const initialState = [];
 
 const incomeSlice = createSlice({
   name: 'income',
