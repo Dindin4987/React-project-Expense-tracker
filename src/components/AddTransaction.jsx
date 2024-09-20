@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addIncome, deleteIncome } from "../redux/incomeSlice";
+import { addExpense, deleteExpense } from "../redux/expensesSlice";
+import ExpenseList from "./ExpenseList";
+import IncomeList from "./IncomeList";
 
 const addTransaction = () => {
   const [type, setType] = useState("");
@@ -7,22 +12,34 @@ const addTransaction = () => {
   const [category, setCategory] = useState("");
   const [amount, setAmount] = useState("");
   const [comment, setComment] = useState("");
-  const [transactions, setTransactions] = useState([]);
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTransactions([
-      ...transactions,
-      {
-        id: Date.now(),
-        type,
-        date,
-        time,
-        category,
-        amount,
-        comment,
-      },
-    ]);
+    if (type === "expense") {
+      dispatch(
+        addExpense({
+          id: Date.now(),
+          date,
+          time,
+          category,
+          amount: Number(amount),
+          comment,
+        })
+      );
+    } else {
+      dispatch(
+        addIncome({
+          id: Date.now(),
+          date,
+          time,
+          category,
+          amount: Number(amount),
+          comment,
+        })
+      );
+    }
+
     setCategory("");
     setAmount("");
     setComment("");
@@ -32,32 +49,9 @@ const addTransaction = () => {
 
   return (
     <div>
-      <table className="table-fixed flex flex-col px-3 p-3">
-        <thead>
-          <th>Category</th>
-          <th>Comment</th>
-          <th>Date</th>
-          <th>Time</th>
-          <th>Sum</th>
-          <th>Actions</th>
-        </thead>
-        <tbody>
-          {transactions.map((t) => (
-            <tr key={t.id}>
-              <td>{t.category}</td>
-              <td>{t.comment}</td>
-              <td>{t.date}</td>
-              <td>{t.time}</td>
-              <td>{t.amount}</td>
-              <td>{t.category}</td>
-              <td>
-                <button>Edit</button>
-                <button>Delete</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <ExpenseList />
+      <IncomeList />
+
       <form onSubmit={handleSubmit} style={formStyles} className="text-black">
         <div>
           <label>
@@ -65,7 +59,7 @@ const addTransaction = () => {
               type="radio"
               name="type"
               value="expense"
-              // checked={formData.type === "Expense"}
+              checked={type === "expense"}
               onChange={(e) => setType(e.target.value)}
             />
             Expense
@@ -75,7 +69,7 @@ const addTransaction = () => {
               type="radio"
               name="type"
               value="income"
-              // checked={formData.type === "Income"}
+              checked={type === "income"}
               onChange={(e) => setType(e.target.value)}
             />
             Income
@@ -124,7 +118,7 @@ const addTransaction = () => {
             name="amount"
             placeholder="Enter the amount"
             value={amount}
-            onChange={(e) => setAmount(e.target.value)}
+            onChange={(e) => setAmount(Number(e.target.value))}
           />
         </div>
 
