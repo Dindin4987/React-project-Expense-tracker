@@ -1,21 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteExpense, editExpense } from "../redux/expensesSlice";
+import EditForm from "../components/EditForm";
 
 function ExpenseList() {
   const expenses = useSelector((state) => state.expenses);
   const dispatch = useDispatch();
+  const [editingExpense, setEditingExpense] = useState(null);
 
   return (
     <div>
-      <h3>Expenses</h3>
+      <h3 className="text-lg">Expenses</h3>
       <ul>
         {expenses.map((expense) => (
           <li key={expense.id}>
-            {expense.category} {expense.comment} {expense.date}{" "}
-            {expense.time} ${expense.amount}
+            {expense.category} {expense.comment} {expense.date} {expense.time} $
+            {expense.amount}
             <button
-              onClick={() => dispatch(editExpense(expense.id))}
+              onClick={() => setEditingExpense(expense)}
               className="border bg-primary rounded-lg px-5 py-1"
             >
               Edit
@@ -29,6 +31,14 @@ function ExpenseList() {
           </li>
         ))}
       </ul>
+
+      {editingExpense && (
+        <EditForm
+          type="expense"
+          transaction={editingExpense}
+          onClose={() => setEditingExpense(null)}
+        />
+      )}
     </div>
   );
 }
