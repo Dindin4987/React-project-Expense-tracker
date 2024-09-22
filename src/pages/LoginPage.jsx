@@ -32,12 +32,7 @@ const LoginPage = () => {
         </div>
 
         <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form
-            onSubmit={handleSubmit}
-            action="#"
-            method="POST"
-            className="space-y-6"
-          >
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <input
                 name="email"
@@ -56,7 +51,10 @@ const LoginPage = () => {
               />
 
               <div className="text-left mt-28">
-                <button className="bg-primary rounded-full px-7 py-2 text-left">
+                <button
+                  type="submit"
+                  className="bg-primary rounded-full px-7 py-2 text-left"
+                >
                   Sign In
                 </button>
                 <p className="text-xs text-gray-500 text-left mt-4">

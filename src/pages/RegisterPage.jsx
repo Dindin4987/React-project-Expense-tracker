@@ -60,7 +60,10 @@ const RegisterPage = () => {
               />
 
               <div className="text-left mt-16">
-                <button className="bg-primary rounded-full px-7 py-2 text-left">
+                <button
+                  type="submit"
+                  className="bg-primary rounded-full px-7 py-2 text-left"
+                >
                   Sign In
                 </button>
               </div>

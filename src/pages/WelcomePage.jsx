@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import LeftSide from "../components/LeftSide";
-import Image from '../components/images/Image.jpg'
+import Image from "../components/images/Image.jpg";
 
 const WelcomePage = () => {
   return (
@@ -25,7 +25,7 @@ const WelcomePage = () => {
 
         <div className="text-left mb-36">
           <Link
-            to="/signup"
+            to="/register"
             type="Link"
             className="bg-primary rounded-full px-7 py-2 mr-7"
           >
@@ -33,7 +33,7 @@ const WelcomePage = () => {
           </Link>
 
           <Link
-            to="/signin"
+            to="/login"
             type="Link"
             className="text-secondary rounded-full px-7 py-2 border"
           >
