@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addIncome } from "../redux/incomeSlice";
 import { addExpense } from "../redux/expensesSlice";
-import ExpenseList from "./ExpenseList";
-import IncomeList from "./IncomeList";
 
-const addTransaction = () => {
+const AddTransaction = () => {
   const [type, setType] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
@@ -49,9 +47,6 @@ const addTransaction = () => {
 
   return (
     <div>
-      <ExpenseList />
-      <IncomeList />
-
       <form onSubmit={handleSubmit} style={formStyles} className="text-black">
         <div>
           <label>
@@ -164,4 +159,4 @@ const buttonStyles = {
   borderRadius: "5px",
 };
 
-export default addTransaction;
+export default AddTransaction;

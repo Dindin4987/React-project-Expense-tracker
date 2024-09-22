@@ -60,7 +60,7 @@ const Donut = () => {
     },
   };
   return (
-    <div style={{ width: "292px", height: "285px" }}>
+    <div style={{ width: "292px", height: "285px" }} className="w-1/2">
       <p className="pt-8">Expenses categories</p>
       <Doughnut data={data} options={options} plugins={[gaugeText]} />
     </div>
