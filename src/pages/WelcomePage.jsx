@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import LeftSide from "../components/LeftSide";
+import Image from '../components/images/Image.jpg'
 
 const WelcomePage = () => {
   return (
