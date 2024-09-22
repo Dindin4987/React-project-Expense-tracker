@@ -12,6 +12,7 @@ import IncomeList from "./components/IncomeList";
 import AddTransaction from "./components/AddTransaction";
 import TransPage from "./components/TransPage";
 import ExpenseIncomeBtn from "./components/ExpenseIncomeBtn";
+import AllTransactions from "./components/AllTransactions";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="addtran" element={<AddTransaction />} />
           <Route path="trans" element={<TransPage />} />
           <Route path="btn" element={<ExpenseIncomeBtn />} />
+          <Route path="all" element={<AllTransactions />} />
         </Route>
       </Routes>
     </BrowserRouter>
