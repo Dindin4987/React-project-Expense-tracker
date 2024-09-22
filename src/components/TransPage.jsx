@@ -21,8 +21,8 @@ const TransPage = () => {
         <h2>Total Expenses: ${totalExpenses}</h2>
       </div>
       <AddTransaction />
-      <ExpenseList />
-      <IncomeList />
+      {/* <ExpenseList />
+      <IncomeList /> */}
     </>
   );
 };

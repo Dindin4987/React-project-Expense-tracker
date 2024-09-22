@@ -3,7 +3,7 @@ import Donut from "./Donut";
 import AddTransaction from "./AddTransaction";
 import ExpenseIncomeBtn from "./ExpenseIncomeBtn";
 
-const LeftSideUser = () => {
+const User = () => {
   return (
     <div className="container flex text-secondary ml-24">
       <div className="basis-1/2">
@@ -32,4 +32,4 @@ const LeftSideUser = () => {
   );
 };
 
-export default LeftSideUser;
+export default User;

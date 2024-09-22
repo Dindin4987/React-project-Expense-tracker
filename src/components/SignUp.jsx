@@ -68,15 +68,16 @@ const SignUp = () => {
                 <button className="bg-primary rounded-full px-7 py-2 text-left">
                   Sign In
                 </button>
-                <p className="text-xs text-gray-500 text-left mt-4">
-                  Already have account?{" "}
-                  <Link to="signin" type="Link">
-                    <span className="underline">Sign In</span>
-                  </Link>
-                </p>
               </div>
             </div>
           </form>
+          
+          <p className="text-xs text-gray-500 text-left mt-4">
+            Already have account?{" "}
+            <Link to="signin" type="Link">
+              <span className="underline">Sign In</span>
+            </Link>
+          </p>
         </div>
       </div>
     </div>

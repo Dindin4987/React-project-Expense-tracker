@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import User from "../components/LeftSideUser";
 
 const MainTransactions = () => {
   return (
-    <div>MainTransactions</div>
-  )
-}
+    <div>
+      <User />
+    </div>
+  );
+};
 
-export default MainTransactions
+export default MainTransactions;
