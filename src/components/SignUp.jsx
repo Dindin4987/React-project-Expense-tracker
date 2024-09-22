@@ -1,8 +1,25 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { signIn } from "../redux/authSlice";
 import LeftSide from "./LeftSide";
+import { useDispatch } from "react-redux";
 
 const SignUp = () => {
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    dispatch(
+      register({
+        name: form.elements.name.value,
+        email: form.elements.email.value,
+        password: form.elements.password.value,
+      })
+    );
+    form.reset();
+  };
+
   return (
     <div className="container flex bg-black">
       <LeftSide />
@@ -16,7 +33,12 @@ const SignUp = () => {
         </div>
 
         <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form action="#" method="POST" className="space-y-6">
+          <form
+            onSubmit={handleSubmit}
+            action="#"
+            method="POST"
+            className="space-y-6"
+          >
             <div>
               <input
                 name="name"
