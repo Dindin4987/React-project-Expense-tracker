@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-axios.defaults.baseURL = 'https://expense-tracker.b.goit.study/api/';
+axios.defaults.baseURL = 'https://expense-tracker.b.goit.study';
 
 // Utility to add JWT
 const setAuthHeader = token => {
@@ -17,7 +17,7 @@ export const register = createAsyncThunk(
     'auth/register',
     async ({ name, email, password }, thunkAPI) => {
         try {
-            const res = await axios.post('/auth/register', {
+            const res = await axios.post('/users/register', {
                 name, email, password,
             });
             setAuthHeader(res.data.token);
@@ -32,7 +32,7 @@ export const login = createAsyncThunk(
     'auth/login',
     async ({ email, password }, thunkAPI) => {
         try {
-            const res = await axios.post('/auth/login', {
+            const res = await axios.post('/users/login', {
                 email, password,
             });
             setAuthHeader(res.data.token);
