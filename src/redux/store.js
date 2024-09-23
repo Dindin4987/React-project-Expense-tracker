@@ -19,7 +19,7 @@ import { authReducer } from '../redux/authSlice';
 const authPersistConfig = {
     key: 'auth',
     storage,
-    whitelist: ['token'],
+    // whitelist: ['token'],
 };
 
 export const store = configureStore({

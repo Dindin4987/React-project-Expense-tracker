@@ -11,6 +11,7 @@ import { refreshUser } from "./redux/authOperations";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import ExpenseList from "./components/ExpenseList";
+import Layout2 from "./components/Layout2";
 
 function App() {
   const dispatch = useDispatch();
@@ -30,6 +31,7 @@ function App() {
           <Route path="dashboard" element={<MainTransactions />} />
           <Route path="transhistory" element={<TransactionsHistory />} />
           <Route path="expense" element={<ExpenseList />} />
+          <Route path="header" element={<Layout2 />} />
         </Route>
       </Routes>
     </BrowserRouter>

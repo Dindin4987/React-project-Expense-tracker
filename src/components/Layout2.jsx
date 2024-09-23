@@ -1,8 +1,11 @@
 import React from "react";
 import Icon from "../components/images/Icon.svg";
 import ImageUser from "../components/images/ImageUser.jpg";
+import { useAuth } from "../redux/useAuth";
 
 const Layout2 = () => {
+  const { isLoggedIn } = useAuth();
+  
   return (
     <div className="container w-full flex justify-between bg-black text-secondary">
       <div className="text-secondary flex  gap-1 font-bold">
