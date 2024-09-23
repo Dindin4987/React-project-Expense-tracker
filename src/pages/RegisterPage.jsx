@@ -33,7 +33,11 @@ const RegisterPage = () => {
         </div>
 
         <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-6"
+            autoComplete="off"
+          >
             <div>
               <input
                 name="name"
