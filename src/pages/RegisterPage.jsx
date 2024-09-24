@@ -39,11 +39,7 @@ const RegisterPage = () => {
         </div>
 
         <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-6"
-            autoComplete="off"
-          >
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <input
                 name="name"
@@ -74,7 +70,7 @@ const RegisterPage = () => {
                   type="submit"
                   className="bg-primary rounded-full px-7 py-2 text-left"
                 >
-                  Sign In
+                  Sign Up
                 </button>
               </div>
             </div>
@@ -82,7 +78,7 @@ const RegisterPage = () => {
 
           <p className="text-xs text-gray-500 text-left mt-4">
             Already have account?{" "}
-            <Link to="login" type="Link">
+            <Link to="/login" type="Link">
               <span className="underline">Sign In</span>
             </Link>
           </p>

@@ -18,7 +18,7 @@ export const register = createAsyncThunk(
     async ({ name, email, password }, thunkAPI) => {
         try {
             const res = await axios.post('/auth/register', {
-                name, email, password,
+                name, email, password
             });
             setAuthHeader(res.data.token);
             return res.data;
@@ -45,7 +45,7 @@ export const login = createAsyncThunk(
 
 export const logout = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     try {
-        await axios.post('/users/logout');
+        await axios.post('/auth/logout');
         clearAuthHeader();
     } catch (err) {
         return thunkAPI.rejectWithValue(err.message);
@@ -67,7 +67,7 @@ export const refreshUser = createAsyncThunk(
         try {
             // If there is a token, add it to the HTTP header and perform the request
             setAuthHeader(persistedToken);
-            const res = await axios.get('/auth/current');
+            const res = await axios.get('/users/current');
             return res.data;
         } catch (err) {
             return thunkAPI.rejectWithValue(err.message);
