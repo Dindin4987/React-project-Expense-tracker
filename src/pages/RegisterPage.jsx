@@ -4,6 +4,12 @@ import { register } from "../redux/authOperations";
 import LeftSide from "../components/LeftSide";
 import { useDispatch } from "react-redux";
 
+/* Controlled Form Component vs Uncontrolled Form Component
+ *
+ * Controlled - data is controlled by state
+ * Uncontrolled - data is controlled by the DOM
+ */
+
 const RegisterPage = () => {
   const dispatch = useDispatch();
 
