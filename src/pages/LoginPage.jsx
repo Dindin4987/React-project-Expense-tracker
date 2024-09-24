@@ -32,11 +32,7 @@ const LoginPage = () => {
         </div>
 
         <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-6"
-            autoComplete="off"
-          >
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <input
                 name="email"
@@ -63,7 +59,7 @@ const LoginPage = () => {
                 </button>
                 <p className="text-xs text-gray-500 text-left mt-4">
                   Don't have an account?{" "}
-                  <Link to="register" type="Link">
+                  <Link to="/register" type="Link">
                     <span className="underline">Sign Up</span>
                   </Link>
                 </p>
