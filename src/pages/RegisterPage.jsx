@@ -15,6 +15,7 @@ const RegisterPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("test");
     const form = e.currentTarget;
     dispatch(
       register({

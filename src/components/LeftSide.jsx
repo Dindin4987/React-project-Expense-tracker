@@ -15,7 +15,7 @@ const LeftSide = () => {
             />
           </div>
 
-          <div className="absolute inset-0 flex items-center mt-96 ml-20 w-74">
+          <div className="absolute">
             <div className="bg-secondary p-4 rounded shadow flex">
               <span>
                 <MdArrowOutward className="icons bg-primary rounded-lg mt-2 text-3xl" />

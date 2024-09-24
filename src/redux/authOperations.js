@@ -17,6 +17,10 @@ export const register = createAsyncThunk(
     'auth/register',
     async ({ name, email, password }, thunkAPI) => {
         try {
+            console.log(`name: ${name}`);
+            console.log(`email: ${email}`);
+            console.log(`password: ${password}`);
+            
             const res = await axios.post('/auth/register', {
                 name, email, password
             });
