@@ -13,20 +13,25 @@ import storage from 'redux-persist/lib/storage';
 import expensesReducer from '../redux/expensesSlice';
 import incomeReducer from '../redux/incomeSlice';
 import { authReducer } from '../redux/authSlice';
+import { combineReducers } from '@reduxjs/toolkit';
 
 
-const authPersistConfig = {
-    key: 'auth',
+const PersistConfig = {
+    key: 'root',
     storage,
-    
+    whitelist: ['auth'], 
 };
 
+const rootReducer = combineReducers({
+    auth: authReducer,
+    expenses: expensesReducer,
+    income: incomeReducer,
+});
+
+const persistedReducer = persistReducer(PersistConfig, rootReducer);
+
 export const store = configureStore({
-    reducer: {
-        auth: persistReducer(authPersistConfig, authReducer),
-        expenses: expensesReducer,
-        income: incomeReducer,
-    },
+    reducer: persistedReducer,
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
             serializableCheck: {
@@ -36,4 +41,3 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
-export default store;

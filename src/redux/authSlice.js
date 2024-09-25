@@ -41,7 +41,7 @@ export const authSlice = createSlice({
       .addCase(logout.pending, (state, _action) => {
         state.isLoading = true;
       })
-      .addCase(logout.fulfilled, (state, action) => {
+      .addCase(logout.fulfilled, (state) => {
         state.user = null;
         state.token = null;
         state.isLoggedIn = false;
