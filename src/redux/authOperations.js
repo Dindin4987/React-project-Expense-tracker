@@ -6,11 +6,13 @@ axios.defaults.baseURL = 'https://expense-tracker.b.goit.study/api/';
 // Utility to add JWT
 const setAuthHeader = token => {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+    localStorage.setItem('token', token);
 };
 
 // Utility to remove JWT
 const clearAuthHeader = () => {
     axios.defaults.headers.common.Authorization = '';
+    localStorage.removeItem('token');
 };
 
 export const register = createAsyncThunk(
@@ -53,10 +55,12 @@ export const logout = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
 });
 
 export const refreshUser = createAsyncThunk(
-    'auth/refresh',
+    'auth/refreshUser',
     async (_, thunkAPI) => {
         // Reading the token from the state via getState()
         const state = thunkAPI.getState();
+
+
         const persistedToken = state.auth.token;
 
         if (persistedToken === null) {
